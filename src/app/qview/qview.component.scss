@@ -1,0 +1,81 @@
+.results_panel{
+    // border: 1px solid magenta;
+    padding: 5px;
+    padding-left: 20px;
+    padding-top: 20px;
+    overflow : hidden;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.results_msg{
+    font-size: smaller;
+}
+
+.results_header{
+    width: 100%;
+    // border: 1px solid purple;
+}
+
+.results_toolbox_icon, .results_toolbox_icon_disabled{
+    padding-left: 5px;
+    font-size: 1.5rem;
+}
+.results_toolbox_icon_disabled{
+    color: rgb(53, 53, 53);
+}
+.results_toolbox{
+    padding: 13px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+
+
+
+.detail_view {
+    // border: 1px solid orange;
+    padding: 5px;
+    overflow-y: scroll;
+   flex-grow: 0;
+   max-height: calc(100% - 40px);
+
+}
+
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
+.detail_table{
+    margin-top:10px;
+    table-layout: fixed;
+    width:100%;
+}
+
+.detail_view_data_heading{
+    width:100px;
+    text-align: left;
+}
+
+.detail_view_value_heading {
+    text-align: left;
+}
+.detail_row{
+    vertical-align: top;
+}
+// raw format
+//
+.data{
+    width:60px;
+    overflow: hidden;
+    vertical-align: top;
+
+}
+
+.value{
+    flex:auto;
+    text-wrap: 1;
+    overflow: hidden ;
+    text-wrap:pretty; 
+    word-break: break-all;
+}

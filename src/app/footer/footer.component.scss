@@ -1,0 +1,29 @@
+.footer_hr{
+    color: slategrey;
+}
+
+.footer{
+    width: 100%;
+    overflow:hidden;
+}
+
+.footer_text{
+    padding-bottom: 1px;
+    padding-left: 20px;
+    text-align: left;
+    color:slategray;
+
+
+}
+.footer_version{
+    padding-bottom:1px;
+    padding-left:10px;
+    text-align: right;    
+    font-size: x-small;
+    color:slategray;
+}
+
+.version_link{
+    cursor:pointer;
+
+}

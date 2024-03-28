@@ -1,0 +1,20 @@
+<div class="flex query_component">
+    <div class="align-items-top qform">
+        <app-qform [relayURI]="this.relayURI"
+            [id]="this.id"
+            [author]="this.author"
+            [kind]="this.kind"
+            [since]="this.since"
+            [until]="this.until"
+            [limit]="this.limit"
+            [tag_name]="this.tag_name"
+            [tag_data]="this.tag_data"
+            (eventItem)="addEvent($event)"
+            (clearEvents)="clearEvents()"
+        ></app-qform>
+    </div>
+    <div class="align-items-top qview">
+        <app-qview [event_queue]="this.event_queue"></app-qview>
+    </div>    
+
+</div>

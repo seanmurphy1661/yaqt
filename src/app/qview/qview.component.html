@@ -1,0 +1,75 @@
+<div class="results_panel align-items-top p-card">
+    <div class="results_header grid">
+        <div class="col-6 p-card-title">Results
+            <ng-container *ngIf="event_queue.length>0">
+                <div class="inline results_msg">: {{event_queue.length}}</div>
+            </ng-container>            
+        </div>
+        <div class="col-6 results_toolbox"> 
+            <ng-container *ngIf="event_queue.length>0">
+                <i class="pi pi-cloud-download results_toolbox_icon"  (click)="downloadNotes()"></i>
+            </ng-container>
+            <ng-container *ngIf="event_queue.length==0">
+                <i class="pi pi-cloud-download results_toolbox_icon_disabled"  ></i>
+            </ng-container>
+    
+        </div>
+    </div>
+    <hr>
+    <ng-container *ngIf='this.display_format=="detail"'>
+        <div class="detail_view">
+            <table class="detail_table">
+            <ng-container *ngFor="let x of this.event_queue">
+                <tr>
+                    <td class="data">pubkey</td>
+                    <td class="value">{{x.pubkey}} <i class="pi pi-copy copy_icon" (click)="this.copyText(x.pubkey);"></i>
+                        <i class="pi pi-user copy_icon" (click)="open_nosta(x.pubkey)"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>kind</td>
+                    <td>{{x.kind}}</td>
+                </tr>
+                <tr>
+                    <td class="data ">created</td>   
+                    <td class="value">{{x.created_at}} - {{convert_time(x.created_at)}} 
+                        <i class="pi pi-copy copy_icon" (click)="this.copyText(x.created_at.toString())" ></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data ">id</td>
+                    <td class="value inline">{{x.id}}
+                        <i class="pi pi-copy copy_icon" (click)="this.copyText(x.id)" ></i>
+                        <i class="pi pi-book copy_icon" (click)="this.open_njump(x.id)" ></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">content</td>
+                    <td class="value">{{x.content}}</td>
+                </tr>
+                <tr>
+                    <td class="data ">sig</td>
+                    <td class="value inline">{{x.sig}}</td>
+                </tr>        
+                <tr>
+                    <td class="data ">tags</td> 
+                    <td class="value">
+                        <table>
+                            <ng-container *ngFor="let r of x.tags">
+                                <tr>
+                                    <ng-container *ngFor="let s of r">
+                                        <td>{{s}}</td>
+                                    </ng-container>
+                                </tr>
+                            </ng-container>
+                        </table>
+                    </td>
+                  
+                </tr>
+                <tr><td colspan="2"><hr></td></tr>
+                </ng-container>
+           </table>
+        </div>
+    </ng-container>
+</div>
+

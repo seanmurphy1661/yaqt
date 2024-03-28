@@ -1,0 +1,15 @@
+.outer {
+    height:100%;
+    box-sizing:border-box;/* includes padding and border to size calculation */
+    display:flex; 
+    flex-direction:column;
+    overflow: hidden;
+   //  border: 1px solid aqua;
+    }
+
+ .inner {
+    flex:1;/* will use whole space left below image if height is set to #outer */
+    overflow:hidden; 
+    max-height: 100%;
+    }
+    

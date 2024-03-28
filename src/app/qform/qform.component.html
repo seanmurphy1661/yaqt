@@ -1,0 +1,70 @@
+<p-card header="Query">
+    <div class="query_panel">
+            <form #connect="ngForm" (ngsubmit)="queryRelay()">
+                <div class="grid">
+                    
+                    <div class="col-12">
+
+                        <div class="field">
+                            <label for="relay" class="label">Relay</label>
+                            <input type="text" name="relay" [(ngModel)]="this.relayURI" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-8">
+           
+                        </div>
+                        <div class="field">
+                            <label for="id" class="label">Event</label>
+                            <input type="text" name="id" [(ngModel)]="this.id" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-10">
+                        </div>
+                        <div class="field">
+                            <label for="author" class="label">Author</label>
+                            <input type="text" name="author" [(ngModel)]="this.author" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-10">
+                        </div>
+            
+                        <div class="field">
+                            <label for="kind" class="label">kind</label>
+                            <input type="text"  name="kind" [(ngModel)]="this.kind" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary">
+                        </div>
+            
+                        <div class="field">
+                            <label for="since" class="label">since</label>
+                            <input type="text" name="since" [(ngModel)]="this.since" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary">
+                        </div>
+                        <div class="field">
+                            <label for="until" class="label">until</label>
+                            <input type="text" name="until" [(ngModel)]="until" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary">
+                        </div>
+                        <div class="field">
+                            <label for="limit" class="label">limit</label>
+                            <input type="text" name="limit" [(ngModel)]="this.limit" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-2">
+                        </div>
+                        <div class="field">
+                            <label for="tag_name" class="label">tag name</label>
+                            <input type="text" name="tag_name" [(ngModel)]="this.tag_name" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-2">
+                        </div>
+                        <div class="field">
+                            <label for="tag_data" class="label">tag data</label>
+                            <input type="text" name="tag_data" [(ngModel)]="this.tag_data" class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-9">
+                        </div>
+
+                        <div>
+                            <p-button class="flx_button" label="Submit" (onClick)="queryRelay()"></p-button>
+                            <p-button class="flx_button" label="Show Query" (onClick)="showQuery()"></p-button>
+                            <p-dialog header="Query String" [(visible)]="this.showQueryString" [style]="{width: '50vw'}">
+                                <p>{{prettyQueryString()}}</p>
+                                <br>
+                                <p-button class="flx_button" label="Save Query String" (onClick)="saveQuery()"></p-button>
+
+                            </p-dialog>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+    </div>
+    <div class="query_msg">
+        {{this.connect_msg}}
+    </div>
+    
+</p-card>
+
